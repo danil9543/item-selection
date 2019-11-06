@@ -1,0 +1,47 @@
+﻿{
+    "manifest_version": 2,
+
+    "name": "item_selection",
+    "version": "0.1",
+
+    "icons": {
+        "48": "48x48.png"
+    },
+
+    "web_accessible_resources": [
+        "sound/e381139bdea73a.mp3","popup/popup.js"
+    ],
+
+    "background": {
+        "scripts": [ "script/background.js" ],
+        "persistent": true
+    },
+
+    "content_scripts": [
+        {
+            "matches": [
+                "https://market.csgo.com/*"
+            ],
+            "js": [ "script/jquery-3.3.1.min.js","script/csgotm.js" ]
+        },
+	
+	{
+            "matches": [
+                "https://tryskins.ru/ru*"
+            ],
+            "js": [ "script/jquery-3.3.1.min.js","script/tryskins.js" ]
+        }
+    ],
+
+    "permissions": [
+        "tabs",
+        "activeTab"
+    ],
+
+    "browser_action": {
+        "default_title": "Запустить",
+        "default_icon": "48x48.png",
+        "default_popup": "popup/popup.html"
+
+    }
+ }
